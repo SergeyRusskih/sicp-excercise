@@ -10,11 +10,10 @@
 (define (iterative value)
   (if (< value 3)
       value
-      (iterative-recursive 2 1 0 value)))
+      (iterative-recursive value 0 3)))
 
-(define (iterative-recursive a b c count)
-   (if (< count 3)
-          a
-          (iterative-recursive (+ a (* 2 b) (* 3 c)) a b (- count 1))))
-
-(iterative 8)
+(define (iterative-recursive value result count)
+  (if (<= count 0)
+      result
+      (iterative-recursive (value) (+ result ()) (- count 1))
+      
