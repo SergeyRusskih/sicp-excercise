@@ -1,0 +1,9 @@
+#lang racket
+
+(define (pascal x y)
+  (if (or (or (<= x 1) (<= y 1)) (> x y))
+      1
+      (+ (pascal (- x 1) (- y 1))
+         (pascal (- x 1) (y)))))
+
+(pascal (1) (2))
